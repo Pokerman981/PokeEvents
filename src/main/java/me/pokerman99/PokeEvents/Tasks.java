@@ -23,7 +23,7 @@ public class Tasks {
                         case 1: {
                             Main.pokecatch = true;
                             Utils.updateScoreboard();
-                            onTimer();
+                            updateTimer();
                             for (Player online : Sponge.getServer().getOnlinePlayers()) {
                                 online.sendTitle(Utils.getPokeCatchTitle());
                                 online.setScoreboard(Main.scoreboard);
@@ -43,10 +43,10 @@ public class Tasks {
                 Main.timer--;
             }
         });
-        autoeventtimertask.submit(Main.getInstance().plugin);
+        autoeventtimertask.submit(Main.getInstance());
     }
 
-    public static void onTimer() {
+    public static void updateTimer() {
         Task.Builder scoreboardtimertask = Task.builder().interval(1, TimeUnit.SECONDS).name("scoreboardtimertask");
         scoreboardtimertask.execute(task -> {
             try {
@@ -65,5 +65,4 @@ public class Tasks {
         });
         scoreboardtimertask.submit(Main.getInstance());
     }
-
 }
