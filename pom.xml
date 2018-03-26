@@ -6,7 +6,7 @@
 
     <groupId>me.pokerman99.PokeEvents</groupId>
     <artifactId>pokevents</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.12-1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
